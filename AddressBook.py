@@ -30,4 +30,18 @@ while True:
                 EditedContact = [EditedFirstName, EditedLastName, EditedAddress, EditedContactNumber]
                 Contact.append(EditedContact)
         if Scan == 0:
-            print("This contact doesn't exist")
+            print("The contact doesn't exist")
+
+    # Delete Contact
+    elif Choice == 3:
+        Delete = input("Enter the contact you wish to delete: ")
+        New = []
+        Del = 0
+        for x in range(len(Contact)):
+            if Delete == Contact[x][0]:
+                Del += 1
+                print(Contact[x])
+                Contact.pop(x)
+                print("The contact has been deleted")
+        if Del == 0:
+            print("The contact doesn't exist")
