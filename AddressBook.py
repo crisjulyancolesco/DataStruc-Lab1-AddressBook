@@ -45,3 +45,13 @@ while True:
                 print("The contact has been deleted")
         if Del == 0:
             print("The contact doesn't exist")
+
+    # View Contacts
+    elif Choice == 4:
+        print("\tContacts\t")
+        for x in range(len(Contact)):
+                print(Contact[x])
+        if not Contact:
+            print("No Contacts")
+  
+        
