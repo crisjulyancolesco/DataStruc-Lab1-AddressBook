@@ -12,3 +12,22 @@ while True:
         ContactNumber = int(input("Contact Number: "))
         NewContact = [FirstName, LastName, Address, ContactNumber]
         Contact.append(NewContact)
+    
+    # Edit Contact
+    elif Choice == 2:
+        Edit = input("Enter the contact you wish to edit: ")
+        New = []
+        Scan = 0
+        for x in range(len(Contact)):
+            if Edit == Contact[x][0]:
+                Scan += 1
+                print(Contact[x])
+                Contact.pop(x)
+                EditedFirstName = input("First name: ")
+                EditedLastName = input("Last name: ")
+                EditedAddress = input("Address: ")
+                EditedContactNumber = int(input("Contact Number: "))
+                EditedContact = [EditedFirstName, EditedLastName, EditedAddress, EditedContactNumber]
+                Contact.append(EditedContact)
+        if Scan == 0:
+            print("This contact doesn't exist")
