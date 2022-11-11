@@ -1,10 +1,11 @@
+# List
 Contact = []
 
 # Display the choices
 while True:
     Choice = int(input("1. Add Contact \n2. Edit Contact \n3. Delete Contact \n4. View Contacts \n5. Search Address Book \n6. Exit \nEnter your Choice: "))
 
-    # Add contact
+    # 1. Add contact
     if Choice == 1:
         FirstName = input("First name: ")
         LastName = input("Last name: ")
@@ -13,7 +14,7 @@ while True:
         NewContact = [FirstName, LastName, Address, ContactNumber]
         Contact.append(NewContact)
     
-    # Edit Contact
+    # 2. Edit Contact
     elif Choice == 2:
         Edit = input("Enter the contact you wish to edit: ")
         New = []
@@ -32,21 +33,21 @@ while True:
         if Scan == 0:
             print("The contact doesn't exist")
 
-    # Delete Contact
+    # 3. Delete Contact
     elif Choice == 3:
         Deleted = input("Enter the contact you wish to delete: ")
         New = []
-        Scan = 0
+        Del = 0
         for x in range(len(Contact)):
             if Deleted == Contact[x][0]:
-                Scan += 1
+                Del += 1
                 print(Contact[x])
                 Contact.pop(x)
                 print("The contact has been deleted")
-        if Scan == 0:
+        if Del == 0:
             print("The contact doesn't exist")
 
-    # View Contacts
+    # 4. View Contacts
     elif Choice == 4:
         print("\tContacts\t")
         for x in range(len(Contact)):
@@ -54,7 +55,7 @@ while True:
         if not Contact:
             print("No Contacts")
 
-    #Search Address Book
+    # 5. Search Address Book
     elif Choice == 5:
         print("\tCriterias to choose from\t")
         Search = int(input("1. First Name \n2. Last Name \n3. Address \n4. Contact Number \nEnter your choice: ")) 
@@ -80,3 +81,12 @@ while True:
                     print(Contact[d])
         if Search >=5:
             print("Invalid Search Criteria")
+
+    # 6. Exit
+    elif Choice >=6:
+        Exit = input("Would you like to exit Address Book? y/n: ")
+        if (Exit ==' ' or Exit =='n' or Exit =='N' or Exit =='No' or Exit =='NO' or  Exit =='no'):
+            continue
+    if (Exit =='' or Exit =='Y' or Exit =='y' or Exit =='yes' or Exit =='YES' or Exit =='Yes'):
+        break
+    
