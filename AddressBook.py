@@ -20,7 +20,7 @@ while True:
     # 2. Edit Contact
     elif Choice == 2:
         print("\nEdit Contact")
-        Edit = input("Enter the contact you wish to edit: ")
+        Edit = input("Enter the First name of the contact you wish to edit: ")
         New = []
         Scan = 0
         for x in range(len(Contact)):
@@ -42,7 +42,7 @@ while True:
     # 3. Delete Contact
     elif Choice == 3:
         print("\nDelete Contact")
-        Deleted = input("Enter the contact you wish to delete: ")
+        Deleted = input("Enter the First name of the contact you wish to delete: ")
         New = []
         Del = 0
         for x in range(len(Contact)):
@@ -74,28 +74,28 @@ while True:
             for a in range(len(Contact)):
                 if SearchFirstName == Contact[a][0]:
                     print(Contact[a])
-            if not Contact:
+            if SearchFirstName != Contact[a][0]:
                 print("\nContact doesn't exist!")
         if Search == 2:
             SearchLastName = input("\t Last Name: ")
             for b in range(len(Contact)):
                 if SearchLastName == Contact[b][1]:
                     print(Contact[b])
-            if not Contact:
+            if SearchLastName != Contact[b][1]:
                 print("\nContact doesn't exist!")
         if Search == 3:
             SearchAddress = input("\t Address: ")
             for c in range(len(Contact)):
                 if SearchAddress == Contact[c][2]:
                     print(Contact[c])
-            if not Contact:
+            if SearchAddress != Contact[c][2]:
                 print("\nContact doesn't exist!")
         if Search == 4:
             SearchContactNumber = int(input("\t Contact Number: "))
             for d in range(len(Contact)):
                 if SearchContactNumber == Contact[d][3]:
                     print(Contact[d])
-            if not Contact:
+            if SearchContactNumber != Contact[d][3]:
                 print("\nContact doesn't exist!")
         if Search >=5:
             print("\nInvalid Search Criteria!")
